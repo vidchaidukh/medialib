@@ -1,0 +1,30 @@
+<h2>Change media</h2>
+<hr width="30%">  <hr width="30%">
+{{#if audio}}
+<table class="centered">
+<tbody>
+  <form action="/apply" method="POST">
+    <tr>
+      <td><label>Назва</label><input name="title" type=text value="{{audio.title}}"></td>
+      <td><label>Виконавець</label><input name="artist" type=text value="{{audio.artist}}"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><audio controls src="/uploads/{{audio.filename}}" type="{{audio.mimetype}}"> </audio></td>
+    </tr>
+    <tr>
+      <td><label>Завантаження</label><input name="downloads" type=text value="{{audio.downloads}}"></td>
+      <td><label>Вподобання</label><input name="likes" type=text value="{{audio.likes}}"></td>
+
+    </tr>
+      <input type="hidden" value="{{audio._id}}" name='id'>
+      <td><button type="submit" value="apply" name="but" class="btn btn-small">Зберегти</button></td>
+      <td><button type="submit" value="delete" name="but" class="btn btn-small" id="delete">Видалити</button></td>
+
+    </tr>
+  </form>
+
+</tbody>
+</table>
+{{else}}
+<p>No media!</p>
+{{/if}}

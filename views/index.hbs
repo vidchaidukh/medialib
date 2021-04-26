@@ -1,0 +1,28 @@
+<h2>Media list</h2>
+  <hr width="30%">  <hr width="30%">
+{{#if audios.length}}
+  <table class="centered">
+
+  {{#each audios}}
+  <tbody>
+      <tr>
+        <td>{{title}}</td>
+        <td>{{artist}}</td>
+        <td><audio controlsList="nodownload" controls src="/uploads/{{filename}}" type="{{mimetype}}"> </audio></td>
+        <form action="/action" method="POST">
+        <input type="hidden" value="{{_id}}" name='id'>
+        <td><button type="submit" value="dwn" name="but" class="btn btn-small">📥 Файл</button><label>{{downloads}}</label></td>
+        <td><button type="submit" value="like" name="but" class="btn btn-small">👍</button><label>{{likes}}</label></td>
+        </form>
+        <form action="/change" method="POST">
+        <input type="hidden" value="{{_id}}" name='idd'>
+        <td><button type="submit" value="change" name="but" class="btn btn-small">Change</button></td>
+        </form>
+      </tr>
+
+  {{/each}}
+  </tbody>
+  </table>
+{{else}}
+<p>No media!</p>
+{{/if}}

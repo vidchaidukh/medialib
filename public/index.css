@@ -1,0 +1,23 @@
+table td {
+  background: #f3f3f3;
+  padding: 1rem;
+  font-size: 20px;
+  font-style: oblique;
+}
+
+table audio{
+  background-image: url("asho512.png");
+}
+
+table label {
+  color: black;
+  padding-left: 5px;
+}
+
+label {
+    font-size: 20px;
+}
+
+h2{
+  text-align: center;
+}
